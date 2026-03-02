@@ -1,0 +1,264 @@
+:root {
+  --primary: #0d9488;
+  --primary-dark: #0f766e;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --error: #ef4444;
+  --gray-1: #f8fafc;
+  --gray-2: #f1f5f9;
+  --gray-3: #e2e8f0;
+  --gray-4: #cbd5e1;
+  --gray-5: #94a3b8;
+  --gray-6: #64748b;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-tertiary: #64748b;
+  --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.08);
+  --transition: all 0.3s ease;
+}
+
+.profile-page {
+  animation: fadeSlideIn 0.6s ease forwards;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.profile-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 2rem;
+  color: var(--text-primary);
+}
+
+.profile-layout {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+/* Avatar Card */
+.profile-avatar-card {
+  min-width: 280px;
+  max-width: 320px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  padding: 1.5rem;
+  background: #ffffff !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  border: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.profile-avatar {
+  width: 120px !important;
+  height: 120px !important;
+  font-size: 48px !important;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.avatar-upload-wrapper {
+  position: relative;
+}
+
+.avatar-upload-overlay {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.avatar-upload-overlay:hover {
+  opacity: 1;
+}
+
+.avatar-upload-overlay input {
+  display: none;
+}
+
+.avatar-upload-btn {
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  backdrop-filter: blur(4px);
+}
+
+.avatar-upload-btn:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+/* Stats */
+.profile-stats {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  width: 100%;
+  padding-top: 16px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.stat-item {
+  flex: 1;
+  min-width: 70px;
+  text-align: center;
+  padding: 8px;
+  background: #f8fafc;
+  border-radius: 12px;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.stat-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Forms */
+.card {
+  border-radius: 12px;
+  padding: 1.5rem;
+  background: #ffffff !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  border: 1px solid #e2e8f0;
+  flex: 1;
+}
+
+.card h4 {
+  margin-bottom: 1rem;
+}
+
+input,
+.password-input,
+textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  font-size: 1rem;
+  background: #ffffff;
+  color: #2a110f;
+  transition: var(--transition);
+}
+
+input:focus,
+.password-input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 10px rgba(13, 148, 136, 0.2);
+}
+
+/* Buttons */
+button {
+  padding: 0.65rem 1.25rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+button[color='red'] {
+  background: var(--error);
+  color: white;
+}
+
+button[color='red']:hover {
+  background: #dc2626;
+}
+
+/* Profile actions card */
+.profile-actions-card {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0;
+}
+
+/* Botão logout em Ações da Conta - vermelho visível */
+.profile-logout-btn,
+.profile-actions-card button[data-accent-color='red'],
+.profile-actions-card .rt-Button[data-accent-color='red'] {
+  background: #dc2626 !important;
+  color: #fff !important;
+  border: none;
+}
+
+.profile-logout-btn:hover,
+.profile-actions-card button[data-accent-color='red']:hover,
+.profile-actions-card .rt-Button[data-accent-color='red']:hover {
+  background: #b91c1c !important;
+  color: #fff !important;
+}
+
+/* Callout */
+.callout-root {
+  border-radius: 0.75rem;
+  padding: 1rem 1.5rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .profile-layout {
+    flex-direction: column;
+  }
+
+  .profile-avatar-card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .profile-stats {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-title {
+    font-size: 1.6rem;
+  }
+
+  .avatar-upload-btn {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+}
+
+/* Animações */
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,235 @@
+/* =========================
+   RESET BASE
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: #0f172a;
+}
+
+/* =========================
+   BACKGROUND PRINCIPAL
+========================= */
+
+.forgot-page.auth-bg {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    radial-gradient(circle at right, rgba(2, 6, 23, 0.75), rgba(2, 6, 23, 1)),
+    url("/login-bg.jpg") no-repeat left center;
+
+  background-size: 55% auto;
+  background-color: #0f172a;
+}
+
+/* =========================
+   PAINEL CENTRAL
+========================= */
+
+.forgot-page .auth-panel {
+  width: 100%;
+  max-width: 460px;
+  padding: 3rem 2.5rem;
+
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(10px);
+
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+}
+
+/* =========================
+   CONTEÚDO INTERNO
+========================= */
+
+.forgot-page .auth-content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* =========================
+   TÍTULO E SUBTÍTULO
+========================= */
+
+.forgot-page .auth-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.forgot-page .auth-subtitle {
+  font-size: 1rem;
+  color: #cbd5e1;
+  opacity: 0.9;
+  margin-bottom: 2rem;
+}
+
+/* =========================
+   FORMULÁRIO
+========================= */
+
+.forgot-page .auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.forgot-page .auth-form label {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  margin-bottom: -0.5rem;
+}
+
+/* =========================
+   INPUTS
+========================= */
+
+.forgot-page .auth-input {
+  width: 100%;
+  padding: 0.85rem 1rem;
+
+  border-radius: 8px;
+  border: 1px solid #1e293b;
+
+  background: #0f172a;
+  color: #ffffff;
+  font-size: 0.95rem;
+
+  transition: all 0.25s ease;
+}
+
+.forgot-page .auth-input::placeholder {
+  color: #64748b;
+}
+
+.forgot-page .auth-input:focus {
+  outline: none;
+  border-color: #0d9488;
+  box-shadow: 0 0 0 2px rgba(13, 148, 136, 0.25);
+}
+
+/* =========================
+   LINK ESQUECI SENHA
+========================= */
+
+.forgot-page .auth-forgot-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -0.5rem;
+}
+
+.forgot-page .auth-forgot-link {
+  font-size: 0.85rem;
+  color: #38bdf8;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.forgot-page .auth-forgot-link:hover {
+  color: #0ea5e9;
+  text-decoration: underline;
+}
+
+/* =========================
+   BOTÃO PRINCIPAL
+========================= */
+
+.forgot-page .auth-button {
+  margin-top: 1rem;
+  padding: 0.9rem;
+
+  border-radius: 8px;
+  border: none;
+
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+
+  background: linear-gradient(135deg, #0d9488, #0891b2);
+  color: #ffffff;
+
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.forgot-page .auth-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(8, 145, 178, 0.35);
+}
+
+.forgot-page .auth-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* =========================
+   RODAPÉ (REGISTRO / VOLTAR)
+========================= */
+
+.forgot-page .auth-footer {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.forgot-page .auth-register-text {
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+.forgot-page .auth-register-button {
+  display: inline-block;
+  margin-top: 0.7rem;
+
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+
+  background: transparent;
+  border: 1px solid #0d9488;
+
+  color: #0d9488;
+  font-weight: 500;
+  text-decoration: none;
+
+  transition: all 0.25s ease;
+}
+
+.forgot-page .auth-register-button:hover {
+  background: #0d9488;
+  color: #ffffff;
+}
+
+h1{
+  color: #ffffff !important;
+}
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 900px) {
+  .forgot-page.auth-bg {
+    background:
+      radial-gradient(circle at center, rgba(2, 6, 23, 0.9), rgba(2, 6, 23, 1)),
+      url("/login-bg.jpg") no-repeat center center;
+
+    background-size: cover;
+  }
+
+  .forgot-page .auth-panel {
+    margin: 1rem;
+    padding: 2rem;
+  }
+}
