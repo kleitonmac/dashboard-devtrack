@@ -1,0 +1,155 @@
+/* ================= CONTAINER ================= */
+
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2.5rem 2.5rem 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #ffffff;
+}
+
+/* ================= HEADER ================= */
+
+.dashboard-header {
+  padding: 2rem 2.5rem;
+  border-radius: 16px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.dashboard-header h1,
+.dashboard-header h2,
+.dashboard-header h3 {
+  color: #0f172a !important;
+  font-weight: 600;
+}
+
+.dashboard-header p,
+.dashboard-header span {
+  color: #475569 !important;
+}
+
+/* ================= GRID STATS ================= */
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+/* ================= STAT CARD ================= */
+
+.stat-card {
+  border-radius: 12px !important;
+  transition: all 0.2s ease;
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.stat-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+/* ================= XP PROGRESS ================= */
+
+.rt-ProgressRoot {
+  background: var(--gray-4);
+  border-radius: 999px;
+}
+
+.rt-ProgressIndicator {
+  background: linear-gradient(90deg, #0d9488, #2dd4bf);
+  box-shadow: 0 0 10px rgba(13, 148, 136, 0.4);
+}
+
+/* ================= EVOLUÇÃO CARD ================= */
+
+.dashboard-evolution-card {
+  border-radius: 20px !important;
+}
+
+/* Card Evolução + Projetos Recentes */
+.evolution-card,
+.dashboard-container .rt-Card {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+  border-radius: 12px !important;
+}
+
+.evolution-card:hover,
+.dashboard-container .rt-Card:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* ================= PROJETOS LISTA ================= */
+
+.list-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+  transition: all 0.2s ease;
+}
+
+.list-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+/* ================= RECOMPENSAS (se você adicionar depois) ================= */
+
+.rewards-card {
+  border-radius: 12px !important;
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+}
+
+/* Wrapper para permitir posicionamento */
+.evolution-wrapper {
+  position: relative;
+}
+
+/* Card precisa ser relative */
+.evolution-card {
+  position: relative;
+  overflow: visible !important;
+}
+
+/* Mascote */
+.dashboard-mascot {
+  position: absolute;
+  bottom: -20px;
+  left: -16px;
+  width: 130px;
+  z-index: 2;
+  pointer-events: none;
+  background: none;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .dashboard-mascot {
+    display: none;
+  }
+}
+
+/* ================= RESPONSIVO ================= */
+
+@media (max-width: 768px) {
+  .dashboard-header {
+    padding: 1.5rem;
+  }
+
+  .dashboard-grid {
+    gap: 1rem;
+  }
+}

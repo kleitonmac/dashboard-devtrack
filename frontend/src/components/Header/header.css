@@ -1,0 +1,217 @@
+.header {
+  background: linear-gradient(135deg, #4f46e5 0%, #6366f1 40%, #10b981 100%);
+  padding: 2.5rem 1.5rem;
+  margin-bottom: 2.5rem;
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  box-shadow: 0 20px 50px rgba(79, 70, 229, 0.25);
+}
+
+/* Glow decorativo suave */
+.header::before {
+  content: "";
+  position: absolute;
+  top: -40%;
+  right: -10%;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.15) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  animation: float 8s ease-in-out infinite;
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* =========================
+   TÍTULO
+========================= */
+
+.header-title {
+  margin-bottom: 2.5rem;
+}
+
+.header-title h1 {
+  color: white;
+  margin: 0 0 0.75rem 0;
+  font-size: 2.75rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.header-title p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.125rem;
+  margin: 0;
+}
+
+/* =========================
+   STATS GRID
+========================= */
+
+.header-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Glass cards mais sofisticados */
+.stat-card {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.25s ease;
+  animation: slideIn 0.6s ease forwards;
+  opacity: 0;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.18);
+}
+
+/* Delay progressivo */
+.stat-card:nth-child(1) { animation-delay: 0.1s; }
+.stat-card:nth-child(2) { animation-delay: 0.2s; }
+.stat-card:nth-child(3) { animation-delay: 0.3s; }
+.stat-card:nth-child(4) { animation-delay: 0.4s; }
+
+.stat-icon {
+  font-size: 2.25rem;
+  min-width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stat-info {
+  flex: 1;
+}
+
+.stat-label {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.85rem;
+  margin: 0 0 0.25rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-value {
+  color: white;
+  font-size: 1.9rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* =========================
+   XP PROGRESS
+========================= */
+
+.stat-card.xp-progress {
+  grid-column: 1 / -1;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.stat-card.xp-progress .stat-icon {
+  display: none;
+}
+
+.progress-container {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 0.75rem;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #fbbf24 0%, #f59e0b 100%);
+  transition: width 0.6s ease;
+  border-radius: 999px;
+}
+
+.progress-text {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.9rem;
+  text-align: center;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* =========================
+   ANIMAÇÕES
+========================= */
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-18px); }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 768px) {
+  .header {
+    padding: 2rem 1.25rem;
+  }
+
+  .header-title h1 {
+    font-size: 2.1rem;
+  }
+
+  .header-title p {
+    font-size: 1rem;
+  }
+
+  .stat-value {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 1.5rem 1rem;
+  }
+
+  .header-title h1 {
+    font-size: 1.7rem;
+  }
+
+  .header-title p {
+    font-size: 0.95rem;
+  }
+}

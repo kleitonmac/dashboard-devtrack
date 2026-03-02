@@ -1,0 +1,197 @@
+/* =========================
+   LAYOUT BASE
+========================= */
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #ffffff;
+}
+
+.main {
+  flex: 1;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Brand mais elegante */
+.navbar-brand h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Menu */
+.navbar-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 1rem;
+  flex: 1;
+}
+
+.navbar-menu a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  padding: 0.5rem 0.9rem;
+  border-radius: 0.6rem;
+}
+
+.navbar-menu a:hover {
+  color: var(--primary);
+  background: rgba(99, 102, 241, 0.08);
+}
+
+/* =========================
+   USER AREA
+========================= */
+
+.navbar-user {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.2rem;
+}
+
+.user-name {
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.user-level {
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* Profile */
+.profile-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  background: rgba(167, 255, 3, 0.08);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.profile-btn:hover {
+  background: var(--primary);
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Logout */
+.logout-btn {
+  padding: 0.45rem 0.9rem;
+  background: var(--error);
+  color: white;
+  border: none;
+  border-radius: 0.6rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.logout-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.main-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 2.5rem 1.25rem;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+  border-top: 1px solid #e2e8f0;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  background: #ffffff;
+  color: #64748b;
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 768px) {
+  .navbar-container {
+    padding: 0.9rem;
+    gap: 1rem;
+  }
+
+  .navbar-menu {
+    flex-basis: 100%;
+    justify-content: center;
+  }
+
+  .main-content {
+    padding: 1.75rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-container {
+    flex-direction: column;
+  }
+
+  .navbar-menu {
+    gap: 0.5rem;
+  }
+
+  .main-content {
+    padding: 1.25rem 0.75rem;
+  }
+}

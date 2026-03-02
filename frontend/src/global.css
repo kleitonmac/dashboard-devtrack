@@ -1,0 +1,459 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Paleta profissional - fundos claros, textos escuros */
+  --primary: #0d9488;
+  --primary-dark: #0f766e;
+  --secondary: #0891b2;
+  --accent: #0d9488;
+  --danger: #dc2626;
+  
+  /* Cores de fundo - branco */
+  --bg-primary: #ffffff;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f8fafc;
+  --border: #e2e8f0;
+  --border-light: #f1f5f9;
+  
+  /* Cores de texto - escuro para legibilidade */
+  --text-primary: #53f806;
+  --text-secondary: #475569;
+  --text-tertiary: #64748b;
+  
+  /* Cores de status */
+  --success: #10b981;
+  --warning: #f59e0b;
+  --error: #dc2626;
+  
+  /* Sombras sutis e premium */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.04);
+  --shadow-md: 0 4px 12px -2px rgb(0 0 0 / 0.06);
+  --shadow-lg: 0 12px 24px -4px rgb(0 0 0 / 0.08);
+  --shadow-xl: 0 20px 40px -8px rgb(0 0 0 / 0.1);
+  
+  /* Transições */
+  --transition: all 0.3s ease;
+  --transition-fast: all 0.15s ease;
+  
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background: #ffffff;
+  color: var(--text-primary);
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Typography - fontes escuras */
+h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+  color: var(--text-primary);
+  letter-spacing: -0.025em;
+}
+
+h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+p {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+/* Botões */
+button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  font-family: inherit;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+button.primary {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: white;
+  box-shadow: var(--shadow-md);
+}
+
+button.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+button.secondary {
+  background: #ffffff;
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+}
+
+button.secondary:hover {
+  background: var(--bg-tertiary);
+  transform: translateY(-2px);
+}
+
+button.success {
+  background: var(--success);
+  color: white;
+}
+
+button.success:hover {
+  background: #059669;
+  transform: translateY(-2px);
+}
+
+button.danger {
+  background: var(--error);
+  color: white;
+}
+
+button.danger:hover {
+  background: #dc2626;
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Links */
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: var(--transition);
+  font-weight: 500;
+}
+
+a:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+/* Inputs e Formulários */
+input, textarea, select {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--bg-tertiary);
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: var(--transition);
+  width: 100%;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.12);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Cards e Containers */
+.card {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+
+.card:hover {
+  border-color: var(--border);
+  box-shadow: var(--shadow-md);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  .container {
+    padding: 1rem 0.75rem;
+  }
+
+  button {
+    padding: 0.65rem 1.25rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+  }
+
+  button {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+    width: 100%;
+  }
+
+  input, textarea, select {
+    font-size: 16px; /* Previne zoom no iOS */
+  }
+}
+
+/* Scrollbar customizado */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* =========================
+   PÁGINAS: Dashboard, Study, Profile, Problems, Projects
+   Design premium: fundo branco, cards brancos, textos escuros
+========================= */
+
+.main-content,
+.dashboard-container,
+.study-page,
+.profile-page,
+.problems-page,
+.projects-page {
+  background: #ffffff !important;
+}
+
+/* Cards Radix - brancos com borda sutil */
+.rt-Card,
+.rt-Card.rt-variant-surface,
+.xp-card,
+.profile-avatar-card,
+.profile-actions-card {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* Flex containers loading/empty */
+.rt-Flex.rt-r-fd-column.rt-r-ai-center.rt-r-gap-3.rt-r-py-6 {
+  background: transparent !important;
+}
+
+/* Headings - texto escuro */
+.rt-Heading,
+.rt-Heading.rt-r-size-4,
+.rt-Heading.rt-r-mb-2,
+.main-content .rt-Heading,
+.dashboard-container .rt-Heading,
+.study-page .rt-Heading,
+.profile-page .rt-Heading,
+.problems-page .rt-Heading,
+.projects-page .rt-Heading,
+.page-header h1 {
+  color: #0f172a !important;
+}
+
+/* Textos - escuro para legibilidade */
+.main-content .rt-Text,
+.dashboard-container .rt-Text,
+.study-page .rt-Text,
+.profile-page .rt-Text,
+.problems-page .rt-Text,
+.projects-page .rt-Text {
+  color: #475569 !important;
+}
+
+/* =========================
+   FORMULÁRIOS PADRONIZADOS
+   Input/textarea: fundo teal, placeholder e texto em branco
+   (Perfil, Estudos, Projetos, Problemas - dentro de .main-content)
+========================= */
+.main-content .rt-TextFieldRoot,
+.main-content .rt-TextAreaRoot {
+  background: #0d9488 !important;
+  border: 1px solid #0f766e !important;
+  border-radius: 8px !important;
+}
+
+.main-content .rt-TextFieldRoot input,
+.main-content .rt-TextFieldRoot .rt-TextFieldInput,
+.main-content .rt-TextAreaRoot textarea,
+.main-content .rt-TextAreaRoot .rt-TextAreaInput {
+  background: #0d9488 !important;
+  color: #fff !important;
+}
+
+.main-content .rt-TextFieldRoot input::placeholder,
+.main-content .rt-TextFieldRoot .rt-TextFieldInput::placeholder,
+.main-content .rt-TextAreaRoot textarea::placeholder,
+.main-content .rt-TextAreaRoot .rt-TextAreaInput::placeholder {
+  color: #fff !important;
+  opacity: 0.95;
+}
+
+.main-content .rt-TextFieldRoot:focus-within,
+.main-content .rt-TextAreaRoot:focus-within {
+  border-color: #14b8a6 !important;
+  box-shadow: 0 0 0 2px rgba(13, 148, 136, 0.35) !important;
+}
+
+/* PasswordInput - mesmo padrão teal */
+.main-content .password-input-wrapper .rt-TextFieldRoot,
+.main-content .password-input-wrapper .rt-TextFieldRoot input {
+  background: #0d9488 !important;
+  color: #fff !important;
+}
+.main-content .password-input-wrapper .rt-TextFieldRoot input::placeholder {
+  color: #fff !important;
+  opacity: 0.95;
+}

@@ -1,0 +1,64 @@
+.chart-wrapper {
+  background: var(--bg-secondary);
+  padding: 1.75rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+}
+
+/* Hover elegante */
+.chart-wrapper:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.06);
+}
+
+/* ========================
+   HEADER
+======================== */
+
+.chart-wrapper h3 {
+  margin: 0 0 1.75rem 0;
+  color: var(--text-primary);
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+}
+
+/* Linha divisória sutil abaixo do título */
+.chart-wrapper h3::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  margin-top: 0.75rem;
+  border-radius: 999px;
+  background: var(--primary);
+  opacity: 0.6;
+}
+
+/* ========================
+   RESPONSIVO
+======================== */
+
+@media (max-width: 768px) {
+  .chart-wrapper {
+    padding: 1.5rem;
+  }
+
+  .chart-wrapper h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .chart-wrapper {
+    padding: 1.25rem;
+  }
+
+  .chart-wrapper h3 {
+    font-size: 1rem;
+  }
+}

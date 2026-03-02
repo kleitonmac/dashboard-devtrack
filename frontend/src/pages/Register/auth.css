@@ -1,0 +1,204 @@
+/* =========================
+   LAYOUT PRINCIPAL - GRID
+========================= */
+
+.register-layout {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-family: "Inter", sans-serif;
+  background: radial-gradient(circle at top right, #020617 0%, #020617 100%);
+}
+
+/* =========================
+   LADO ESQUERDO - MASCOTE
+========================= */
+
+.register-mascot-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(circle at left, rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 1)),
+    url('../../assets/loginbg.jpg') no-repeat center center;
+  background-size: cover;
+  height: 100vh;
+}
+
+/* =========================
+   LADO DIREITO - FORMULÁRIO
+========================= */
+
+.auth-page {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  height: 100vh;
+  background: radial-gradient(circle at top right, #020617 0%, #020617 80%);
+}
+
+/* Container do Card */
+.auth-page > div {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* =========================
+   CARD - PRANCHETA 100% MARROM
+========================= */
+
+.auth-page .rt-Card {
+  background: #6b4423 !important;   /* MARROM TOTAL */
+  border: 2px solid #4a2e17 !important;
+  border-radius: 14px !important;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
+  padding: 32px !important;
+}
+
+/* =========================
+   TEXTOS DENTRO DO CARD
+========================= */
+
+.auth-page .rt-Card .rt-Heading,
+.auth-page .rt-Card .rt-Text,
+.auth-page label.rt-Text {
+  color: #ffffff !important;
+}
+
+/* =========================
+   INPUTS - MARROM + TEXTO BRANCO
+========================= */
+
+.auth-page .rt-TextFieldRoot {
+  background: #5c4033 !important;
+  border: 1px solid #4a2e17 !important;
+  border-radius: 8px !important;
+  transition: all 0.2s ease;
+}
+
+.auth-page .rt-TextFieldRoot:focus-within {
+  border-color: #8b6914 !important;
+  box-shadow: 0 0 0 2px rgba(139, 105, 20, 0.3) !important;
+}
+
+.auth-page .rt-TextFieldRoot input,
+.auth-page .rt-TextFieldRoot .rt-TextFieldInput {
+  background: #5c4033 !important;
+  color: #ffffff !important;
+  font-size: 15px !important;
+}
+
+.auth-page .rt-TextFieldRoot input::placeholder,
+.auth-page .rt-TextFieldRoot .rt-TextFieldInput::placeholder {
+  color: #ffffff !important;
+  opacity: 1;
+}
+
+/* PasswordInput */
+
+.auth-page .password-input-wrapper .rt-TextFieldRoot,
+.auth-page .password-input-wrapper .rt-TextFieldRoot input {
+  background: #5c4033 !important;
+  color: #ffffff !important;
+}
+
+.auth-page .password-input-wrapper .rt-TextFieldRoot input::placeholder {
+  color: #ffffff !important;
+  opacity: 1;
+}
+
+/* Textarea */
+
+.auth-page .rt-TextAreaRoot textarea,
+.auth-page .rt-TextAreaRoot .rt-TextAreaInput {
+  background: #5c4033 !important;
+  color: #ffffff !important;
+}
+
+.auth-page .rt-TextAreaRoot textarea::placeholder,
+.auth-page .rt-TextAreaRoot .rt-TextAreaInput::placeholder {
+  color: #ffffff !important;
+  opacity: 1;
+}
+
+/* =========================
+   BOTÕES (MANTIDOS VERDES)
+========================= */
+
+button[type="submit"] {
+  background: linear-gradient(135deg, #14b8a6, #0d9488) !important;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none !important;
+  border-radius: 12px !important;
+  height: 48px !important;
+  font-size: 16px !important;
+  letter-spacing: 0.3px;
+  color: white !important;
+}
+
+button[type="submit"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 35px rgba(20, 184, 166, 0.35);
+}
+
+button[type="submit"]:disabled {
+  opacity: 0.7;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Botão "Já tem conta? Fazer login" */
+
+.auth-page a .rt-Button {
+  background: linear-gradient(135deg, #14b8a6, #0d9488) !important;
+  font-weight: 600 !important;
+  border: none !important;
+  border-radius: 12px !important;
+  height: 48px !important;
+  font-size: 16px !important;
+  letter-spacing: 0.3px;
+  color: white !important;
+  transition: all 0.3s ease;
+}
+
+.auth-page a .rt-Button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 35px rgba(20, 184, 166, 0.35);
+}
+
+/* =========================
+   HEADER (MANTIDO BRANCO)
+========================= */
+
+.register-header .rt-Heading,
+.register-header .rt-Text {
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.5px;
+}
+
+.register-header .rt-Text {
+  font-weight: 400 !important;
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 1000px) {
+  .register-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .register-mascot-area {
+    display: none;
+  }
+
+  .auth-page {
+    background: #0f172a;
+    padding: 2rem;
+  }
+}
