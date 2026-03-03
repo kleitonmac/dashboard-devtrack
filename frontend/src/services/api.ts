@@ -81,60 +81,60 @@ export const authAPI = {
 // PROJECTS
 // ======================================
 export const projectsAPI = {
-  getAll: (params: RequestData = {}) => api.get('/projetos', { params }),
+  getAll: (params: RequestData = {}) => api.get('/projects', { params }),
 
-  getById: (id: string) => api.get(`/projetos/${id}`),
+  getById: (id: string) => api.get(`/projects/${id}`),
 
-  create: (data: RequestData) => api.post('/projetos', data),
+  create: (data: RequestData) => api.post('/projects', data),
 
-  update: (id: string, data: RequestData) => api.put(`/projetos/${id}`, data),
+  update: (id: string, data: RequestData) => api.put(`/projects/${id}`, data),
 
-  delete: (id: string) => api.delete(`/projetos/${id}`),
+  delete: (id: string) => api.delete(`/projects/${id}`),
 }
 
 // ======================================
 // STUDY
 // ======================================
 export const studyAPI = {
-  getAll: (params: RequestData = {}) => api.get('/estudos', { params }),
+  getAll: (params: RequestData = {}) => api.get('/study', { params }),
 
-  getById: (id: string) => api.get(`/estudos/${id}`),
+  getById: (id: string) => api.get(`/study/${id}`),
 
-  create: (data: RequestData) => api.post('/estudos', data),
+  create: (data: RequestData) => api.post('/study', data),
 
-  update: (id: string, data: RequestData) => api.put(`/estudos/${id}`, data),
+  update: (id: string, data: RequestData) => api.put(`/study/${id}`, data),
 
-  delete: (id: string) => api.delete(`/estudos/${id}`),
+  delete: (id: string) => api.delete(`/study/${id}`),
 }
 
 // ======================================
 // STUDY TASKS
 // ======================================
 export const studyTasksAPI = {
-  getAll: () => api.get('/estudos/tasks'),
+  getAll: () => api.get('/study/tasks'),
 
-  create: (data: RequestData) => api.post('/estudos/tasks', data),
+  create: (data: RequestData) => api.post('/study/tasks', data),
 
-  complete: (id: string) => api.patch(`/estudos/tasks/${id}/complete`),
+  complete: (id: string) => api.patch(`/study/tasks/${id}/complete`),
 
-  toggle: (id: string) => api.patch(`/estudos/tasks/${id}/toggle`),
+  toggle: (id: string) => api.patch(`/study/tasks/${id}/toggle`),
 
-  delete: (id: string) => api.delete(`/estudos/tasks/${id}`),
+  delete: (id: string) => api.delete(`/study/tasks/${id}`),
 }
 
 // ======================================
 // PROBLEMS
 // ======================================
 export const problemsAPI = {
-  getAll: (params: RequestData = {}) => api.get('/problemas', { params }),
+  getAll: (params: RequestData = {}) => api.get('/problems', { params }),
 
-  getById: (id: string) => api.get(`/problemas/${id}`),
+  getById: (id: string) => api.get(`/problems/${id}`),
 
-  create: (data: RequestData) => api.post('/problemas', data),
+  create: (data: RequestData) => api.post('/problems', data),
 
-  update: (id: string, data: RequestData) => api.put(`/problemas/${id}`, data),
+  update: (id: string, data: RequestData) => api.put(`/problems/${id}`, data),
 
-  delete: (id: string) => api.delete(`/problemas/${id}`),
+  delete: (id: string) => api.delete(`/problems/${id}`),
 }
 
 // ======================================
