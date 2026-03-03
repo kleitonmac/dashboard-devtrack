@@ -22,7 +22,7 @@ const MAX_IMAGE_SIZE = 2 * 1024 * 1024 // 2MB
 const ACCEPTED_TYPES = ['image/jpeg', 'image/png', 'image/webp']
 
 export default function Profile() {
-  const { user, updateUser, logout } = useAuth()
+  const { user, updateUser, logout, refreshUser } = useAuth()
   const fileInputRef = useRef<HTMLInputElement>(null)
 
   const [editMode, setEditMode] = useState(false)
@@ -113,10 +113,23 @@ export default function Profile() {
     setMessage(null)
 
     try {
-      await api.put('/auth/profile', formData)
-      updateUser({ ...user, ...formData })
+      const { data } = await api.put('/auth/profile', formData)
+      
+      // Atualizar com os dados retornados do servidor
+      if (data.user) {
+        updateUser(data.user)
+      } else {
+        updateUser({ ...user, ...formData })
+      }
+      
+      // Sincronizar com o banco para garantir dados atualizados
+      await refreshUser()
+      
       setEditMode(false)
-      setMessage({ type: 'success', text: 'Perfil atualizado com sucesso!' })
+      setMessage({ 
+        type: 'success', 
+        text: `Perfil atualizado com sucesso! ${formData.email !== user?.email ? 'Você pode fazer login com seu novo email.' : ''}` 
+      })
     } catch (err: any) {
       setMessage({
         type: 'error',
